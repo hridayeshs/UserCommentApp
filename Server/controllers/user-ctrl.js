@@ -108,7 +108,7 @@ getUsers = async (req, res) => {
         return res.status(200).json({ success: true, data: users })
     }).catch(err => console.log(err))
 }
-
+// validate user login
 login = async (req, res) => {
     await Users.findOne({
         user_name: req.body.user_name
