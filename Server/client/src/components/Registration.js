@@ -131,7 +131,9 @@ export default class Registration extends Component {
           {' '}
         {error && <Error message={ERROR_IN_REGISTRATION}/>}
         {' '}
-        {register && <Message message={REGISTRATION_MESSAGE} />}
+        {register &&  <Message message={REGISTRATION_MESSAGE}/>}
+        {register && setTimeout(function(){window.location.href='/?q=login';},1000)}
+
         {' '}
         </Grid.Column>
       </Grid>

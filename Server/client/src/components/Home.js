@@ -18,6 +18,10 @@ import {
 } from 'semantic-ui-react'
 import Login from './Login';
 import Registration from './Registration';
+import { Redirect } from 'react-router';
+const qs = require('query-string');
+const parsed = qs.parse(window.location.search);
+const openLoginDefault = (parsed.q=='login') ? true : false;
 
 const getWidth = () => {
   const isSSR = typeof window === 'undefined'
@@ -40,7 +44,7 @@ HomepageHeading.propTypes = {
 class DesktopContainer extends Component {
 
   state = {
-    isLoginOpen: false,
+    isLoginOpen: openLoginDefault,
     isRegistraOpen: false
   }
 
@@ -51,6 +55,7 @@ class DesktopContainer extends Component {
       dimmer
     });
   }
+
   // show = (dimmer) => () => this.setState({ dimmer, open: true })
   // close = () => this.setState({ open: false })
 
@@ -121,14 +126,15 @@ class DesktopContainer extends Component {
               <Modal dimmer={dimmer} open={this.state.isRegistraOpen} onClose={this.close} size="small" id="modaldiv2">
                 <Modal.Actions><Registration/></Modal.Actions>
               </Modal>
+
               </div>
             </Menu>
             <HomepageHeading />
           </Segment>
         </Visibility>
-
         {children}
       </Responsive>
+
     )
   }
 }
