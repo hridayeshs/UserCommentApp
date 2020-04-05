@@ -62,9 +62,9 @@ export default class Login extends Component {
           <Form size='large' onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='Username' type="text"
-                name="Username"
+                name="user_name"
                 onChange={this.handleOnChangeUserName}
-                autoComplete="Username"
+                autoComplete="user_name"
                 required />
               <Form.Input
                 fluid
@@ -72,13 +72,13 @@ export default class Login extends Component {
                 iconPosition='left'
                 placeholder='Password'
                 type="password"
-                name="Password"
+                name="password"
                 onChange={this.handleOnChangePassword}
-                autoComplete="Password"
+                autoComplete="password"
                 required
               />
 
-              <Button color='teal' fluid size='large' onClick={this.onSubmit}>
+              <Button color='teal' fluid size='large'>
                 Login
               </Button>
             </Segment>

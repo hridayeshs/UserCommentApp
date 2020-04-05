@@ -4,6 +4,7 @@ import { Button, Form, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import {UserRegistration,UsernameValidation} from '../services/RegistrationService';
 import Message from '../elements/Message';
 import Error from '../elements/Error';
+import classNames from 'classnames';
 import {
   REGISTRATION_MESSAGE,
   ERROR_IN_REGISTRATION,
@@ -98,15 +99,16 @@ export default class Registration extends Component {
           <Form size='large' onSubmit={this.onSubmit}>
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='First Name' type="text"
-                value={this.state.first_name}
+                name="first_name"
                 onChange={this.handleOnChangeFirstName}
-                required/>
+                required />
                 <Form.Input fluid icon='user' iconPosition='left' placeholder='Last Name' type="text"
-                value={this.state.last_name}
+                name="last_name"
                 onChange={this.handleOnChangeLastName}
                 required />
                 <Form.Input fluid icon='user' iconPosition='left' placeholder='Username' type="text"
-                value={this.state.user_name}
+                className={classNames ({error: user_name_taken})}
+                name="user_name"
                 onBlur={this.handleOnBlur}
                 onChange={this.handleOnChangeUserName}
                 required/>
@@ -116,12 +118,12 @@ export default class Registration extends Component {
                 iconPosition='left'
                 placeholder='Password'
                 type="password"
-                value={this.state.password}
+                name="password"
                 onChange={this.handleOnChangePassword}
                 autoComplete="password"
                 required
               />
-              <Button color='teal' fluid size='large' onClick={this.onSubmit} disabled={user_name_taken}>
+              <Button color='teal' fluid size='large' disabled={user_name_taken}>
                 Register
               </Button>
             </Segment>
