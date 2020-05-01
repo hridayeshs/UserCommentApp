@@ -55,6 +55,17 @@ code {
 	top: 15%;
 	bottom: 35%;
 }
+#modalaction {
+	width: 100.4%;
+	margin: 0 0 0 - 40.2%;
+	background-color: #080505;
+}
+.main {
+  width:100%;
+  min-height:calc(100% - 100px);
+  background-size: cover;
+  background-attachment:fixed;
+}
 /*
 .popup {
 	width: 100%;

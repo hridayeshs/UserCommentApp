@@ -56,10 +56,10 @@ export default class Login extends Component {
     return (
       <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> Log-in to your account
+          <Header as='h1' color='teal' textAlign='center'>
+            Log in to Photo Comment App
           </Header>
-          <Form size='large' onSubmit={this.onSubmit}>
+          <Form size='large' onSubmit={this.onSubmit} >
             <Segment stacked>
               <Form.Input fluid icon='user' iconPosition='left' placeholder='Username' type="text"
                 name="user_name"
@@ -77,15 +77,17 @@ export default class Login extends Component {
                 autoComplete="password"
                 required
               />
-
               <Button color='teal' fluid size='large'>
                 Login
               </Button>
             </Segment>
           </Form>
           {' '}
-          {loginSuccess && <Message message={LOGIN_MESSAGE} />}    {' '}
-          {error && <Error message={ERROR_IN_LOGIN} />}    {' '}
+          {error && <Error message={ERROR_IN_LOGIN} />}
+          {' '}
+          {loginSuccess && <Message message={LOGIN_MESSAGE} />}
+          {loginSuccess && setTimeout(function(){window.location.href='/images';},1000)}
+
         </Grid.Column>
       </Grid>
     );

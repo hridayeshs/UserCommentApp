@@ -10,6 +10,8 @@ export const REGISTRATION_MESSAGE = 'Registered Successfully.';
 export const ERROR_IN_REGISTRATION = 'Error in Registration';
 export const LOGIN_MESSAGE = 'Login Successful';
 export const ERROR_IN_LOGIN = 'Error in Login'
+export const SUCCESSFUL_IMAGE_UPLOAD = 'Image Uploaded Successful';
+export const ERROR_IN_IMAGE_UPLOAD = 'Error in Image Uplaod'
 
 export const COMMON_FIELDS = {
 	USER_NAME : 'Username',

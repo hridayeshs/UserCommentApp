@@ -3,12 +3,8 @@ import React, { Component } from 'react'
 import {
   Button,
   Container,
-  Divider,
-  Grid,
   Header,
   Icon,
-  Image,
-  List,
   Menu,
   Responsive,
   Segment,
@@ -28,6 +24,7 @@ const getWidth = () => {
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth
 }
+
 
 const HomepageHeading = ({ mobile }) => (
   <Container Image style={{ margin:'10% 0 10% 3%'}}>
@@ -56,8 +53,6 @@ class DesktopContainer extends Component {
     });
   }
 
-  // show = (dimmer) => () => this.setState({ dimmer, open: true })
-  // close = () => this.setState({ open: false })
 
   handleFocus = (dimmer) => {
     this.setState({
@@ -118,15 +113,15 @@ class DesktopContainer extends Component {
                   </div>
                 {/* </Menu.Item> */}
               <div class='modal-dialog'>
-              <Modal dimmer={dimmer}  open={this.state.isLoginOpen} onClose={this.close} size="small" id="modaldiv">
-                <Modal.Actions>
+              <Modal dimmer={dimmer}   open={this.state.isLoginOpen} onClose={this.close} size="small" id="modaldiv">
+                < Modal.Actions id = 'modalaction'>
                 <Login/>
                 </Modal.Actions>
+
               </Modal>
               <Modal dimmer={dimmer} open={this.state.isRegistraOpen} onClose={this.close} size="small" id="modaldiv2">
-                <Modal.Actions><Registration/></Modal.Actions>
+                <Modal.Actions id = 'modalaction'> < Registration /> </Modal.Actions>
               </Modal>
-
               </div>
             </Menu>
             <HomepageHeading />

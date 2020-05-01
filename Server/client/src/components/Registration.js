@@ -93,8 +93,8 @@ export default class Registration extends Component {
     return (
        <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as='h2' color='teal' textAlign='center'>
-            <Image src='/logo.png' /> Sign up
+          <Header as='h1' color='teal' textAlign='center'>
+            Create a new account
           </Header>
           <Form size='large' onSubmit={this.onSubmit}>
             <Segment stacked>

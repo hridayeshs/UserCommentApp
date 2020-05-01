@@ -19,8 +19,8 @@ class App extends Component {
 						<Route exact path="/login" component={Login} />
 						<Route exact path="/" component={Home} />
 						{/* <Route exact path="/popup" component={PopUp} /> */}
-						{/* <Redirect from="/" to="login" /> */}
-						<Redirect exact path ="/imageupload" component={ImageUpload}/>
+						{/* <Redirect from="/" to="login" />*/}
+						<Route exact path ="/images" component={ImageUpload}/>
 					</Switch>
 					</div>
 				</Router>
